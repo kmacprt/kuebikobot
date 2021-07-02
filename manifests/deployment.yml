@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kghbot-7303"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kghbot-7303"
+  template:
+    metadata:
+      labels:
+        app: "kghbot-7303"
+    spec:
+      containers:
+        - name: "kghbot-7303"
+          image: "mirror2d.azurecr.io/kghbot"
+          ports:
+          - containerPort: 80
